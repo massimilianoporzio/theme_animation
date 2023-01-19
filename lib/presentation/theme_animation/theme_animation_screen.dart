@@ -49,9 +49,11 @@ class ThemeAnimationScreen extends StatelessWidget {
               ),
               child: Stack(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 50),
-                    child: Center(child: Sun()),
+                  AnimatedPadding(
+                    duration: const Duration(milliseconds: 200),
+                    padding: EdgeInsets.only(
+                        top: themeService.isDarkModeOn ? 110 : 50),
+                    child: const Center(child: Sun()),
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,
