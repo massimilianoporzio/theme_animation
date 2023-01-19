@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterbasics/application/theme_service.dart';
 import 'package:provider/provider.dart';
 
+import 'widgets/sun.dart';
+
 class ThemeAnimationScreen extends StatelessWidget {
   const ThemeAnimationScreen({super.key});
 
@@ -47,6 +49,10 @@ class ThemeAnimationScreen extends StatelessWidget {
               ),
               child: Stack(
                 children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 50),
+                    child: Center(child: Sun()),
+                  ),
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
