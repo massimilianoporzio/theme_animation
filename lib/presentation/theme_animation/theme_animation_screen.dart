@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterbasics/application/theme_service.dart';
 import 'package:provider/provider.dart';
 
+import 'widgets/moon.dart';
 import 'widgets/sun.dart';
 
 class ThemeAnimationScreen extends StatelessWidget {
@@ -49,6 +50,18 @@ class ThemeAnimationScreen extends StatelessWidget {
               ),
               child: Stack(
                 children: [
+                  AnimatedPositioned(
+                    top: themeService.isDarkModeOn ? 100 : 130, //* se dark sali
+                    right: themeService.isDarkModeOn ? 100 : -40, //fuori
+                    duration: const Duration(milliseconds: 400),
+                    child: AnimatedOpacity(
+                        //*quando isDarkMon viene attivato ci mette 550 ms
+                        //* a passare da opacity 0 a 1
+                        //* e viceversa
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 300),
+                        child: const Moon()),
+                  ),
                   AnimatedPadding(
                     duration: const Duration(milliseconds: 200),
                     padding: EdgeInsets.only(
