@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterbasics/application/theme_service.dart';
+import 'package:flutterbasics/presentation/theme_animation/widgets/animated_star.dart';
 import 'package:provider/provider.dart';
 
 import 'widgets/moon.dart';
+import 'widgets/star.dart';
 import 'widgets/sun.dart';
 
 class ThemeAnimationScreen extends StatelessWidget {
@@ -50,6 +52,36 @@ class ThemeAnimationScreen extends StatelessWidget {
               ),
               child: Stack(
                 children: [
+                  AnimatedStar(
+                    durationInMillisec: 200,
+                    top: 70,
+                    right: 50,
+                    opacity: themeService.isDarkModeOn ? 0.9 : 0,
+                  ),
+                  AnimatedStar(
+                    durationInMillisec: 100,
+                    top: 150,
+                    left: 60,
+                    opacity: themeService.isDarkModeOn ? 0.5 : 0,
+                  ),
+                  AnimatedStar(
+                    durationInMillisec: 500,
+                    top: 40,
+                    left: 100,
+                    opacity: themeService.isDarkModeOn ? 0.9 : 0,
+                  ),
+                  AnimatedStar(
+                    durationInMillisec: 500,
+                    top: 50,
+                    left: 50,
+                    opacity: themeService.isDarkModeOn ? 0.9 : 0,
+                  ),
+                  AnimatedStar(
+                    durationInMillisec: 300,
+                    top: 100,
+                    right: 200,
+                    opacity: themeService.isDarkModeOn ? 1 : 0,
+                  ),
                   AnimatedPositioned(
                     top: themeService.isDarkModeOn ? 100 : 130, //* se dark sali
                     right: themeService.isDarkModeOn ? 100 : -40, //fuori
